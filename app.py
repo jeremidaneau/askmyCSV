@@ -23,7 +23,7 @@ def calculate_token_count(text):
 
 # Generate LLM response
 def generate_response(csv_file, input_query, max_tokens):
-    llm = ChatOpenAI(model_name='gpt-4-0613', temperature=0.2, openai_api_key=openai_api_key)
+    llm = ChatOpenAI(model_name='gpt-4-32k', temperature=0.2, openai_api_key=openai_api_key)
     df = load_csv(csv_file)
     
     # Calculate token count of the input query
