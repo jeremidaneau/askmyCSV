@@ -7,7 +7,7 @@ from langchain.agents.agent_types import AgentType
 # Page title
 st.set_page_config(page_title='Ask the 📄 ')
 st.title('Ask the 📄 ')
-
+st.subheader('Pose des questions à ton csv :sunglasses:')
 # Load CSV file
 def load_csv(input_csv):
   df = pd.read_csv(input_csv)
