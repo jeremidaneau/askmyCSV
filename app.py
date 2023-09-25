@@ -44,12 +44,12 @@ def generate_response(csv_file, input_query, max_tokens):
 uploaded_file = st.file_uploader('Upload a CSV file', type=['csv'])
 question_list = [
   'How many rows are there ❔',
-  'Ask my own question ']
+  'Ask my own question']
 query_text = st.selectbox('Select an example query:', question_list, disabled=not uploaded_file)
 openai_api_key = st.text_input('OpenAI API Key', type='password', disabled=not (uploaded_file and query_text))
 
 # App logic
-if query_text == 'Other':
+if query_text == 'Ask my own question':
   query_text = st.text_input('Enter your query:', placeholder='Enter query here ...', disabled=not uploaded_file)
 if not openai_api_key.startswith('sk-'):
   st.warning('Please enter your OpenAI API key!', icon='⚠')
